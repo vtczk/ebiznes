@@ -1,0 +1,59 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET           /                                            controllers.HomepageController.index
+
+GET           /login                                       controllers.AuthenticationController.login()
+POST          /login                                       controllers.AuthenticationController.loginHandle()
+GET           /register                                    controllers.AuthenticationController.register()
+POST          /register                                    controllers.AuthenticationController.registerHandle()
+
+GET           /payments/userId                             controllers.PaymentController.listPayments(userId:Long)
+#POST          /payment/:paymentId               controllers.PaymentController.createPayment()
+#GET           /payment/:paymentId               controllers.PaymentController.payment(paymentId:Long)
+DELETE        /payment/:paymentId                          controllers.PaymentController.cancelPayment(paymentId:Long)
+
+
+GET           /user/settings                               controllers.UserController.settings()
+POST          /user/settingsHandle                         controllers.UserController.settingHandle()
+DELETE        /user/logout                                 controllers.UserController.logout()
+
+
+GET           /products                                    controllers.ProductController.getAll()
+GET           /products/category/:categoryId               controllers.ProductController.getByCategory(categoryId:Int)
+POST          /products                                    controllers.ProductController.addProduct()
+POST          /products/quantity/:productId/:amount        controllers.ProductController.setQuantity(productId :Long,amount:Long)
+PUT           /products/:productId                         controllers.ProductController.updateProduct(productId:Long)
+GET           /products/:productId                         controllers.ProductController.getById(productId:Long)
+DELETE        /products/:productId                         controllers.ProductController.deleteProduct(productId:Long)
+
+GET           /categories                                  controllers.CategoryController.listCategories()
+POST          /categories                                  controllers.CategoryController.addCategory()
+PUT           /categories                                  controllers.CategoryController.updateCategory()
+DELETE        /categories/:categoryId                      controllers.CategoryController.deleteCategory(categoryId:Int)
+
+GET           /opinion/:productId                          controllers.OpinionController.getOpinionsForProduct(productId:Long)
+POST          /opinion                                     controllers.OpinionController.createOpinion()
+GET           /opinion/rating/:productId                   controllers.OpinionController.getStarRatingForProduct(productId:Long)
+DELETE        /opinion/:opinionId                          controllers.OpinionController.deleteOpinion(opinionId:Long)
+
+GET           /topdeals                                    controllers.TopDealsController.getTopDeals()
+POST          /topdeals/:productId                         controllers.TopDealsController.addTopDeal(productId:Long)
+DELETE        /topdeals/:productId                         controllers.TopDealsController.removeTopDeal(productId:Long)
+
+GET           /search/:keyword                             controllers.SearchController.searchForProduct(keyword:String)
+
+GET           /favourites/:userId                          controllers.FavouritesController.getFavourites(userId:Long)
+POST          /favourites                                  controllers.FavouritesController.addProductToFavourites()
+DELETE        /favourites/:userId/:productId              controllers.FavouritesController.removeFromFavourites(userId:Long,productId:Long)
+
+GET           /cart                                        controllers.CartController.getCart()
+POST          /cart/:productId                             controllers.CartController.addToCart(productId:Long)
+DELETE        /cart/:productId                             controllers.CartController.removeFromCart(productId:Long)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                                controllers.Assets.versioned(path="/public", file: Asset)
