@@ -65,3 +65,10 @@ GET           /updatecategory/:id                          controllers.CategoryC
 POST          /categoryupdated                             controllers.CategoryController.saveUpdateCategory()
 GET           /deletecategory/:id                          controllers.CategoryController.deleteFormCat(id: Int)
 POST          /deletecategory                              controllers.CategoryController.saveDeleteCat()
+
+GET           /addproductform                              controllers.ProductController.addFormProd()
+POST          /productadded                               controllers.ProductController.saveAddProd()
+#GET           /updateproductform/:id                       controllers.ProductController.updateFormProd(id: Int)
+#POST          /productupdated                              controllers.ProductController.saveUpdateProd()
+GET           /deleteproductform/:id                          controllers.ProductController.deleteFormProd(id: Int)
+POST          /productdeleted                              controllers.ProductController.saveDeleteProd()
