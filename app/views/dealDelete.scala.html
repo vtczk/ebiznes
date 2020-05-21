@@ -1,0 +1,17 @@
+@import helper._
+@import views.html.helper.{form, inputText}
+
+
+@(product: Form[DeleteTopDealForm], categories: Seq[TopDeal])(implicit request: MessagesRequestHeader, flash: Flash)
+@flash.get("success").getOrElse("")
+
+@main("Create deal") {
+    <h2>Delete deal</h2>
+
+    @form(action = routes.TopDealsController.deleteDeal()) {
+        @helper.CSRF.formField
+        @inputText(product("id"))
+
+        <input type="submit" value="Submit">
+    }
+}

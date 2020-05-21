@@ -1,0 +1,20 @@
+@import helper._
+@import views.html.helper.{form, inputText}
+
+
+@(product: Form[UpdateTopDealForm], categories: Seq[TopDeal])(implicit request: MessagesRequestHeader, flash: Flash)
+@flash.get("success").getOrElse("")
+
+@main("Create deal") {
+    <h2>Update deal</h2>
+
+    @form(action = routes.TopDealsController.saveUpdatedDeal()) {
+        @helper.CSRF.formField
+        @inputText(product("id"))
+        @inputText(product("discount"))
+        @inputText(product("product"))
+
+
+        <input type="submit" value="Submit">
+    }
+}

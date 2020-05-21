@@ -73,30 +73,30 @@ class ProductController @Inject()(messagesControllerComponents: MessagesControll
     )
   }
 
-//  def updateFormProd(id: Long): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-//    productRepository.getById(id).map(product => {
-//      val filledForm = updateProductForm.fill(UpdateProductForm(product.id, product.name,product.description, product.price.toInt, product.image, product.category))
-//      Ok(views.html.productUpdate(filledForm, products))
-//    })
-//
-//
-//  }
-//  def saveUpdateProd(): Action[AnyContent] = Action.async { implicit request =>
-//
-//    updateProductForm.bindFromRequest.fold(
-//      errorForm => {
-//        Future.successful(
-//          BadRequest(views.html.productUpdate(errorForm, products))
-//        )
-//      },
-//      product => {
-//        productRepository.update(Product(product.id, product.name, product.description, product.price, product.image, product.category)).map { _ =>
-//          routes.ProductController.updateFormProd(product.id)
-//          Ok("Product updated")
-//        }
-//      }
-//    )
-//  }
+  def updateFormProd(id: Long): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    productRepository.getById(id).map(product => {
+      val filledForm = updateProductForm.fill(UpdateProductForm(product.id, product.name,product.description, product.price.toInt, product.image, product.category))
+      Ok(views.html.productUpdate(filledForm, products))
+    })
+
+
+  }
+  def saveUpdateProd(): Action[AnyContent] = Action.async { implicit request =>
+
+    updateProductForm.bindFromRequest.fold(
+      errorForm => {
+        Future.successful(
+          BadRequest(views.html.productUpdate(errorForm, products))
+        )
+      },
+      product => {
+        productRepository.update(Product(product.id, product.name, product.description, product.price, product.image, product.category)).map { _ =>
+          routes.ProductController.updateFormProd(product.id)
+          Ok("Product updated")
+        }
+      }
+    )
+  }
 
 
   def deleteFormProd(id: Long): Action[AnyContent] = Action.async { implicit request =>

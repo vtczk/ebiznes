@@ -1,0 +1,22 @@
+@import helper._
+@import views.html.helper.{form, inputText}
+
+
+@(product: Form[UpdateProductForm], categories: Seq[Product])(implicit request: MessagesRequestHeader, flash: Flash)
+@flash.get("success").getOrElse("")
+
+@main("Create category") {
+    <h2>Update product</h2>
+
+    @form(action = routes.ProductController.saveUpdateProd()) {
+        @helper.CSRF.formField
+        @inputText(product("id"))
+        @inputText(product("name"))
+        @inputText(product("description"))
+        @inputText(product("price"))
+        @inputText(product("image"))
+        @inputText(product("category"))
+
+        <input type="submit" value="Submit">
+    }
+}

@@ -68,7 +68,17 @@ POST          /deletecategory                              controllers.CategoryC
 
 GET           /addproductform                              controllers.ProductController.addFormProd()
 POST          /productadded                               controllers.ProductController.saveAddProd()
-#GET           /updateproductform/:id                       controllers.ProductController.updateFormProd(id: Int)
-#POST          /productupdated                              controllers.ProductController.saveUpdateProd()
-GET           /deleteproductform/:id                          controllers.ProductController.deleteFormProd(id: Int)
+GET           /updateproductform/:id                       controllers.ProductController.updateFormProd(id: Long)
+POST          /productupdated                              controllers.ProductController.saveUpdateProd()
+GET           /deleteproductform/:id                          controllers.ProductController.deleteFormProd(id: Long)
 POST          /productdeleted                              controllers.ProductController.saveDeleteProd()
+
+GET           /deleteuser/:id                          controllers.UserController.deleteFormUser(id: Long)
+POST          /userdeleted                              controllers.UserController.saveDeleteUser()
+
+GET           /adddeal                              controllers.TopDealsController.addTopDealForm()
+POST          /dealadded                               controllers.TopDealsController.saveAddTopDeal()
+GET           /updatedeal/:id                       controllers.TopDealsController.updateTopDealForm(id: Long)
+POST          /dealupdated                              controllers.TopDealsController.saveUpdatedDeal()
+GET           /deletedeal/:id                       controllers.TopDealsController.deleteForm(id: Long)
+POST          /dealdeleted                              controllers.TopDealsController.deleteDeal()
