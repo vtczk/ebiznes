@@ -1,0 +1,18 @@
+@import helper._
+@import views.html.helper.{form, inputText}
+
+
+@(product: Form[CreateCategoryForm], categories: Seq[Category])(implicit request: MessagesRequestHeader, flash: Flash)
+@flash.get("success").getOrElse("")
+
+@main("Create category") {
+    <h2>Create category</h2>
+
+    @form(action = routes.CategoryController.saveAddCat()) {
+        @helper.CSRF.formField
+        @inputText(product("id"))
+        @inputText(product("name"))
+
+        <input type="submit" value="Submit">
+    }
+}

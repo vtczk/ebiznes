@@ -1,0 +1,17 @@
+@import helper._
+@import views.html.helper.{form, inputText}
+
+
+@(product: Form[DeleteCategoryForm], categories: Seq[Category])(implicit request: MessagesRequestHeader, flash: Flash)
+@flash.get("success").getOrElse("")
+
+@main("Delete category") {
+    <h2>Delete category</h2>
+
+    @form(action = routes.CategoryController.saveDeleteCat()) {
+        @helper.CSRF.formField
+        @inputText(product("id"))
+
+        <input type="submit" value="Submit">
+    }
+}
