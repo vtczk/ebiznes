@@ -42,4 +42,10 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
     ).result.headOption
   }
 
+
+  def delete(id: Long): Future[Unit] = db.run(users.filter(_.id === id).delete).map(_ => ())
+
+  def getById(id: Long): Future[User] = db.run {
+    users.filter(_.id === id).result.head
+  }
 }

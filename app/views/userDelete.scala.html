@@ -2,13 +2,13 @@
 @import views.html.helper.{form, inputText}
 
 
-@(product: Form[DeleteProductForm], categories: Seq[Product])(implicit request: MessagesRequestHeader, flash: Flash)
+@(product: Form[DeleteUserForm], categories: Seq[User])(implicit request: MessagesRequestHeader, flash: Flash)
 @flash.get("success").getOrElse("")
 
 @main("Create category") {
-    <h2>Delete product</h2>
+    <h2>Delete user</h2>
 
-    @form(action = routes.ProductController.saveDeleteProd()) {
+    @form(action = routes.UserController.saveDeleteUser()) {
         @helper.CSRF.formField
         @inputText(product("id"))
 

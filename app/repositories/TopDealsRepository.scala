@@ -32,8 +32,25 @@ class TopDealsRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider,
   private val products = TableQuery[ProductTable]
   private val topdeals = TableQuery[TopDealsTable]
 
+  def addProduct(newProduct: TopDeal): Future[TopDeal] = db.run {
+    topdeals returning topdeals.map(_.id) into ((newProduct, id) => newProduct.copy(id = id)) += (newProduct)
+  }
 
   def allTopdeals(): Future[Seq[TopDeal]] = db.run {
     topdeals.result
+  }
+
+  def list(): Future[Seq[TopDeal]] = db.run {
+    topdeals.result
+  }
+
+  def getById(id: Long): Future[TopDeal] = db.run {
+    topdeals.filter(_.id === id).result.head
+  }
+
+  def delete(id: Long): Future[Unit] = db.run(topdeals.filter(_.id === id).delete).map(_ => ())
+
+  def update(newT: TopDeal): Future[Unit] = {
+    db.run(topdeals.filter(_.id === newT.id).update(newT)).map(_ => ())
   }
 }
