@@ -130,6 +130,10 @@ class ProductRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
     result
   }
 
+  def list(): Future[Seq[Product]] = db.run {
+    products.result
+  }
+
   def searchForProduct(phrase: String): Future[Option[Product]] = {
 
     val q = for {product <- products if product.name like '%' + phrase + "%"
