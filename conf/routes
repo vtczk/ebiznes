@@ -48,7 +48,7 @@ GET           /search/:keyword                             controllers.SearchCon
 
 GET           /favourites/:userId                          controllers.FavouritesController.getFavourites(userId:Long)
 POST          /favourites                                  controllers.FavouritesController.addProductToFavourites()
-DELETE        /favourites/:userId/:productId              controllers.FavouritesController.removeFromFavourites(userId:Long,productId:Long)
+DELETE        /favourites/:userId/:productId               controllers.FavouritesController.removeFromFavourites(userId:Long,productId:Long)
 
 GET           /cart                                        controllers.CartController.getCart()
 POST          /cart/:productId                             controllers.CartController.addToCart(productId:Long)
@@ -57,3 +57,11 @@ DELETE        /cart/:productId                             controllers.CartContr
 
 # Map static resources from the /public folder to the /assets URL path
 GET           /assets/*file                                controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET           /addcategory                                 controllers.CategoryController.addFormCat()
+POST          /categoryadded                               controllers.CategoryController.saveAddCat()
+GET           /updatecategory/:id                          controllers.CategoryController.updateFormCat(id: Int)
+POST          /categoryupdated                             controllers.CategoryController.saveUpdateCategory()
+GET           /deletecategory/:id                          controllers.CategoryController.deleteFormCat(id: Int)
+POST          /deletecategory                              controllers.CategoryController.saveDeleteCat()
