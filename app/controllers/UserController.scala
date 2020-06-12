@@ -1,6 +1,6 @@
 package controllers
 
-import models.User
+import models.UserOld
 import javax.inject._
 import play.api.mvc._
 import play.api.data.Form
@@ -13,7 +13,7 @@ import scala.concurrent.{ExecutionContext, Future}
 
 class UserController @Inject()(messagesControllerComponents: MessagesControllerComponents, userRepository: UserRepository)(implicit ec: ExecutionContext) extends MessagesAbstractController(messagesControllerComponents) {
 
- var users : Seq[User] = Seq[User]()
+ var users : Seq[UserOld] = Seq[UserOld]()
 
  val deleteUserForm: Form[DeleteUserForm] = Form {
   mapping(

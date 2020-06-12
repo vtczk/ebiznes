@@ -11,7 +11,9 @@ import scala.concurrent.{ExecutionContext, Future}
 
 
 @Singleton
-class FavouritesRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider, val productRepository: ProductRepository, val userRepository: UserRepository)(implicit ec: ExecutionContext) {
+class FavouritesRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider,
+                                     val productRepository: ProductRepository,
+                                     val userRepository: UserRepository)(implicit ec: ExecutionContext) {
 
   private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
@@ -25,7 +27,7 @@ class FavouritesRepository @Inject()(val dbConfigProvider: DatabaseConfigProvide
 
 
   private class Favourites(tag: Tag) extends Table[FavouriteMapping](tag, "favourites") {
-    def user = column[Long]("user")
+    def user = column[String]("user")
 
     def user_fk = foreignKey("user_fk", product, products)(_.id)
 
@@ -36,7 +38,7 @@ class FavouritesRepository @Inject()(val dbConfigProvider: DatabaseConfigProvide
     def * = (user, product) <> ((FavouriteMapping.apply _).tupled, FavouriteMapping.unapply)
   }
 
-  def getFavouritesForUser(userId: Long): Future[Seq[Product]] = {
+  def getFavouritesForUser(userId: String): Future[Seq[Product]] = {
     val query = for {
       favourite <- favourites if favourite.user === userId
       product <- products if product.id === favourite.product
