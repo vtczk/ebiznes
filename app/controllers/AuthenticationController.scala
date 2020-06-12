@@ -1,7 +1,7 @@
 package controllers
 
 import javax.inject._
-import models.User
+import models.UserOld
 import play.api.libs.json.Json
 import play.api.mvc._
 import repositories.UserRepository
@@ -17,7 +17,7 @@ class AuthenticationController @Inject()(val controllerComponents: ControllerCom
   }
 
   def loginHandle(): Action[AnyContent] = Action.async { implicit request =>
-    val user = request.body.asJson.get.as[User]
+    val user = request.body.asJson.get.as[UserOld]
     userRepository
       .isPresent(user)
       .map {
@@ -32,7 +32,7 @@ class AuthenticationController @Inject()(val controllerComponents: ControllerCom
   }
 
   def registerHandle(): Action[AnyContent] = Action.async { implicit request =>
-    val user = request.body.asJson.get.as[User]
+    val user = request.body.asJson.get.as[UserOld]
     userRepository
       .add(user)
       .map(usr => Ok(Json.toJson(usr)))

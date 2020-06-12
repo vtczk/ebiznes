@@ -1,30 +1,35 @@
 package controllers
 
+import com.mohiva.play.silhouette.api.Silhouette
 import javax.inject._
 import models.FavouriteMapping
 import play.api.libs.json.Json
 import play.api.mvc._
 import repositories.FavouritesRepository
+import silhouette.DefaultEnv
 
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class FavouritesController @Inject()(val controllerComponents: ControllerComponents, val favouritesRepository: FavouritesRepository)(implicit ec: ExecutionContext) extends BaseController {
+class FavouritesController @Inject()(cc: MessagesControllerComponents,
+                                     silhouette: Silhouette[DefaultEnv],
+                                     val controllerComponents: ControllerComponents,
+                                     val favouritesRepository: FavouritesRepository)(implicit ec: ExecutionContext) extends BaseController {
 
 
-  def addProductToFavourites() = Action { implicit request: Request[AnyContent] =>
-    val favourite = request.body.asJson.get.as[FavouriteMapping]
-    favouritesRepository.addFavourite(favourite)
-    Ok(Json.toJson(favourite))
+  def addProductToFavourites(productId: Long) = silhouette.SecuredAction.async { implicit request =>
+    val mapping = FavouriteMapping(request.identity.id, productId)
+    favouritesRepository.addFavourite(mapping)
+    Future(Ok(Json.toJson(mapping)))
   }
 
-  def removeFromFavourites(userId: Long, productId: Long) = Action { implicit request: Request[AnyContent] =>
-    val favourite = new FavouriteMapping(userId, productId)
+  def removeFromFavourites(productId: Long) = silhouette.SecuredAction.async { implicit request =>
+    val favourite = new FavouriteMapping(request.identity.id, productId)
     favouritesRepository.deleteFavourite(favourite)
-    Ok("Deleted")
+    Future(Ok("Deleted"))
   }
 
-  def getFavourites(userId: Long): Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
-    favouritesRepository.getFavouritesForUser(userId).map(favourites => Ok(Json.toJson(favourites)))
+  def getFavourites(): Action[AnyContent] = silhouette.SecuredAction.async { implicit request =>
+    favouritesRepository.getFavouritesForUser(request.identity.id).map(favourites => Ok(Json.toJson(favourites)))
   }
 }

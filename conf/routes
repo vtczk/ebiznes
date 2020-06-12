@@ -5,6 +5,9 @@
 
 # An example controller showing a sample home page
 GET           /                                            controllers.HomepageController.index
+POST          /auth/register                               controllers.SignUpController.submit
+POST          /auth/login                                  controllers.SignInController.submit
+GET           /auth/provider/:provider                     controllers.SocialController.authenticate(provider: String)
 
 GET           /login                                       controllers.AuthenticationController.login()
 POST          /login                                       controllers.AuthenticationController.loginHandle()
@@ -46,9 +49,9 @@ DELETE        /topdeals/:productId                         controllers.TopDealsC
 
 GET           /search/:keyword                             controllers.SearchController.searchForProduct(keyword:String)
 
-GET           /favourites/:userId                          controllers.FavouritesController.getFavourites(userId:Long)
-POST          /favourites                                  controllers.FavouritesController.addProductToFavourites()
-DELETE        /favourites/:userId/:productId               controllers.FavouritesController.removeFromFavourites(userId:Long,productId:Long)
+GET           /favourites                                  controllers.FavouritesController.getFavourites()
+POST          /favourites/:productId                       controllers.FavouritesController.addProductToFavourites(productId:Long)
+DELETE        /favourites/:productId                       controllers.FavouritesController.removeFromFavourites(productId:Long)
 
 GET           /cart                                        controllers.CartController.getCart()
 POST          /cart/:productId                             controllers.CartController.addToCart(productId:Long)
@@ -67,18 +70,18 @@ GET           /deletecategory/:id                          controllers.CategoryC
 POST          /deletecategory                              controllers.CategoryController.saveDeleteCat()
 
 GET           /addproductform                              controllers.ProductController.addFormProd()
-POST          /productadded                               controllers.ProductController.saveAddProd()
+POST          /productadded                                controllers.ProductController.saveAddProd()
 GET           /updateproductform/:id                       controllers.ProductController.updateFormProd(id: Long)
 POST          /productupdated                              controllers.ProductController.saveUpdateProd()
-GET           /deleteproductform/:id                          controllers.ProductController.deleteFormProd(id: Long)
+GET           /deleteproductform/:id                       controllers.ProductController.deleteFormProd(id: Long)
 POST          /productdeleted                              controllers.ProductController.saveDeleteProd()
 
-GET           /deleteuser/:id                          controllers.UserController.deleteFormUser(id: Long)
-POST          /userdeleted                              controllers.UserController.saveDeleteUser()
+GET           /deleteuser/:id                              controllers.UserController.deleteFormUser(id: Long)
+POST          /userdeleted                                 controllers.UserController.saveDeleteUser()
 
-GET           /adddeal                              controllers.TopDealsController.addTopDealForm()
-POST          /dealadded                               controllers.TopDealsController.saveAddTopDeal()
-GET           /updatedeal/:id                       controllers.TopDealsController.updateTopDealForm(id: Long)
-POST          /dealupdated                              controllers.TopDealsController.saveUpdatedDeal()
-GET           /deletedeal/:id                       controllers.TopDealsController.deleteForm(id: Long)
-POST          /dealdeleted                              controllers.TopDealsController.deleteDeal()
+GET           /adddeal                                     controllers.TopDealsController.addTopDealForm()
+POST          /dealadded                                   controllers.TopDealsController.saveAddTopDeal()
+GET           /updatedeal/:id                              controllers.TopDealsController.updateTopDealForm(id: Long)
+POST          /dealupdated                                 controllers.TopDealsController.saveUpdatedDeal()
+GET           /deletedeal/:id                              controllers.TopDealsController.deleteForm(id: Long)
+POST          /dealdeleted                                 controllers.TopDealsController.deleteDeal()

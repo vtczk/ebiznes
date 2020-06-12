@@ -2,7 +2,7 @@
 @import views.html.helper.{form, inputText}
 
 
-@(product: Form[DeleteUserForm], categories: Seq[User])(implicit request: MessagesRequestHeader, flash: Flash)
+@(product: Form[DeleteUserForm], categories: Seq[UserOld])(implicit request: MessagesRequestHeader, flash: Flash)
 @flash.get("success").getOrElse("")
 
 @main("Create category") {
