@@ -32,7 +32,7 @@ class ProductRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
 
     def category = column[Int]("category")
 
-    def category_fk = foreignKey("cat_fk", category, cat)(_.id)
+    def categoryFk = foreignKey("cat_fk", category, cat)(_.id)
 
 
     /**
@@ -51,7 +51,7 @@ class ProductRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
 
     def product = column[Long]("product", O.PrimaryKey, O.AutoInc)
 
-    def product_fk = foreignKey("product_fk", product, products)(_.id)
+    def productFk = foreignKey("product_fk", product, products)(_.id)
 
     def amount = column[Long]("amount")
 
@@ -134,12 +134,12 @@ class ProductRepository @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
     products.result
   }
 
-  def searchForProduct(phrase: String): Future[Option[Product]] = {
+  def searchForProducts(phrase: String): Future[Seq[Product]] = {
 
     val q = for {product <- products if product.name like '%' + phrase + "%"
 
     } yield product
 
-    db.run(q.result.headOption)
+    db.run(q.result)
   }
 }

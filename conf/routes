@@ -5,24 +5,13 @@
 
 # An example controller showing a sample home page
 GET           /                                            controllers.HomepageController.index
-POST          /auth/register                               controllers.SignUpController.submit
-POST          /auth/login                                  controllers.SignInController.submit
-GET           /auth/provider/:provider                     controllers.SocialController.authenticate(provider: String)
+POST          /auth/register                               controllers.RegisterController.submit
+POST          /auth/login                                  controllers.LoginController.submit
+GET           /auth/provider/:provider                     controllers.SocialProviderController.authenticate(provider: String)
 
-GET           /login                                       controllers.AuthenticationController.login()
-POST          /login                                       controllers.AuthenticationController.loginHandle()
-GET           /register                                    controllers.AuthenticationController.register()
-POST          /register                                    controllers.AuthenticationController.registerHandle()
 
 GET           /payments/userId                             controllers.PaymentController.listPayments(userId:Long)
-#POST          /payment/:paymentId               controllers.PaymentController.createPayment()
-#GET           /payment/:paymentId               controllers.PaymentController.payment(paymentId:Long)
 DELETE        /payment/:paymentId                          controllers.PaymentController.cancelPayment(paymentId:Long)
-
-
-GET           /user/settings                               controllers.UserController.settings()
-POST          /user/settingsHandle                         controllers.UserController.settingHandle()
-DELETE        /user/logout                                 controllers.UserController.logout()
 
 
 GET           /products                                    controllers.ProductController.getAll()
@@ -75,9 +64,6 @@ GET           /updateproductform/:id                       controllers.ProductCo
 POST          /productupdated                              controllers.ProductController.saveUpdateProd()
 GET           /deleteproductform/:id                       controllers.ProductController.deleteFormProd(id: Long)
 POST          /productdeleted                              controllers.ProductController.saveDeleteProd()
-
-GET           /deleteuser/:id                              controllers.UserController.deleteFormUser(id: Long)
-POST          /userdeleted                                 controllers.UserController.saveDeleteUser()
 
 GET           /adddeal                                     controllers.TopDealsController.addTopDealForm()
 POST          /dealadded                                   controllers.TopDealsController.saveAddTopDeal()

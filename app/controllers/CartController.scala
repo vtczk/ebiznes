@@ -8,15 +8,15 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
 
 
   def getCart() = Action { implicit request: Request[AnyContent] =>
- Ok
+    Ok
   }
 
   def addToCart(productId: Long) = Action { implicit request: Request[AnyContent] =>
- Ok
+    Ok
   }
 
   def removeFromCart(productId: Long) = Action { implicit request: Request[AnyContent] =>
- Ok
+    Ok
   }
 
 }

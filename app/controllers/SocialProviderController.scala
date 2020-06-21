@@ -16,15 +16,15 @@ import silhouette.DefaultEnv
 
 import scala.concurrent.{ExecutionContext, Future}
 
-class SocialController @Inject()(cc: MessagesControllerComponents,
-                                 silhouette: Silhouette[DefaultEnv],
-                                 configuration: Configuration,
-                                 clock: Clock,
-                                 userService: UserService,
-                                 loginInfoDao: LoginInfoDao,
-                                 authInfoRepository: AuthInfoRepository,
-                                 socialProviderRegistry: SocialProviderRegistry)
-                                (implicit ex: ExecutionContext)
+class SocialProviderController @Inject()(cc: MessagesControllerComponents,
+                                         silhouette: Silhouette[DefaultEnv],
+                                         configuration: Configuration,
+                                         clock: Clock,
+                                         userService: UserService,
+                                         loginInfoDao: LoginInfoDao,
+                                         authInfoRepository: AuthInfoRepository,
+                                         socialProviderRegistry: SocialProviderRegistry)
+                                        (implicit ex: ExecutionContext)
   extends MessagesAbstractController(cc) {
 
   def authenticate(provider: String) = Action.async { implicit request =>

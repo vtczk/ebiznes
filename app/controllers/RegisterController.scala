@@ -17,13 +17,13 @@ import silhouette.DefaultEnv
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class SignUpController @Inject()(cc: MessagesControllerComponents,
-                                 silhouette: Silhouette[DefaultEnv],
-                                 userService: UserService,
-                                 authInfoRepository: AuthInfoRepository,
-                                 loginInfoDao: LoginInfoDao,
-                                 passwordHasherRegistry: PasswordHasherRegistry)
-                                (implicit ec: ExecutionContext)
+class RegisterController @Inject()(cc: MessagesControllerComponents,
+                                   silhouette: Silhouette[DefaultEnv],
+                                   userService: UserService,
+                                   authInfoRepository: AuthInfoRepository,
+                                   loginInfoDao: LoginInfoDao,
+                                   passwordHasherRegistry: PasswordHasherRegistry)
+                                  (implicit ec: ExecutionContext)
   extends MessagesAbstractController(cc)
     with I18nSupport {
 
