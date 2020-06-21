@@ -16,11 +16,11 @@ import silhouette.DefaultEnv
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class SignInController @Inject()(cc: MessagesControllerComponents,
-                                 silhouette: Silhouette[DefaultEnv],
-                                 userService: UserService,
-                                 credentialsProvider: CredentialsProvider)
-                                (implicit ec: ExecutionContext)
+class LoginController @Inject()(cc: MessagesControllerComponents,
+                                silhouette: Silhouette[DefaultEnv],
+                                userService: UserService,
+                                credentialsProvider: CredentialsProvider)
+                               (implicit ec: ExecutionContext)
   extends MessagesAbstractController(cc) with I18nSupport {
 
   def submit() = silhouette.UnsecuredAction(parse.json).async { implicit request =>

@@ -29,11 +29,11 @@ class FavouritesRepository @Inject()(val dbConfigProvider: DatabaseConfigProvide
   private class Favourites(tag: Tag) extends Table[FavouriteMapping](tag, "favourites") {
     def user = column[String]("user")
 
-    def user_fk = foreignKey("user_fk", product, products)(_.id)
+    def userFk = foreignKey("user_fk", product, products)(_.id)
 
     def product = column[Long]("product")
 
-    def product_fk = foreignKey("product_fk", product, products)(_.id)
+    def productFk = foreignKey("product_fk", product, products)(_.id)
 
     def * = (user, product) <> ((FavouriteMapping.apply _).tupled, FavouriteMapping.unapply)
   }

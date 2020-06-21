@@ -12,9 +12,10 @@ class SearchController @Inject()(val controllerComponents: ControllerComponents,
 
 
   def searchForProduct(keyword: String) = Action.async { implicit request: Request[AnyContent] =>
-    productRepository.searchForProduct(keyword).map {
-      case Some(product) => Ok(Json.toJson(product))
-      case None => NoContent
+    productRepository.searchForProducts(keyword).map {
+      products =>
+        Ok(Json.toJson(products))
+
     }
   }
 
