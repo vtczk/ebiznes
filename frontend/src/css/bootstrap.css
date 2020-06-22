@@ -142,11 +142,7 @@ body {
     outline: 0!important
 }
 
-hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible
-}
+
 
 h1,
 h2,
@@ -165,7 +161,6 @@ p {
 
 abbr[data-original-title],
 abbr[title] {
-    text-decoration: underline;
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
     cursor: help;
@@ -261,20 +256,7 @@ a:not([href]):not([tabindex]):focus {
     outline: 0
 }
 
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, monospace;
-    font-size: 1em
-}
 
-pre {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    overflow: auto;
-    -ms-overflow-style: scrollbar
-}
 
 figure {
     margin: 0 0 1rem
@@ -527,7 +509,10 @@ hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, .1)
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
 }
 
 .small,
@@ -609,11 +594,13 @@ mark {
     color: #868e96
 }
 
+
 code,
 kbd,
 pre,
 samp {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1em
 }
 
 code {
@@ -649,7 +636,9 @@ pre {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 90%;
-    color: #212529
+    color: #212529;
+    overflow: auto;
+    -ms-overflow-style: scrollbar
 }
 
 pre code {
@@ -4074,7 +4063,9 @@ tbody.collapse.show {
 .navbar-expand>.container,
 .navbar-expand>.container-fluid {
     padding-right: 0;
-    padding-left: 0
+    padding-left: 0;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap
 }
 
 .navbar-expand .navbar-nav {
@@ -4096,11 +4087,7 @@ tbody.collapse.show {
     padding-left: .5rem
 }
 
-.navbar-expand>.container,
-.navbar-expand>.container-fluid {
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap
-}
+
 
 .navbar-expand .navbar-collapse {
     display: -ms-flexbox!important;
@@ -4476,9 +4463,6 @@ tbody.collapse.show {
     text-decoration: underline
 }
 
-.breadcrumb-item+.breadcrumb-item:hover::before {
-    text-decoration: none
-}
 
 .breadcrumb-item.active {
     color: #868e96
@@ -7137,7 +7121,6 @@ a.bg-dark:hover {
 .mb-0,
 .my-0 {
     margin-bottom: 0;
-    margin: auto;
     margin-left:10px;
 }
 
@@ -8617,7 +8600,6 @@ a.text-dark:hover {
 }
 
 .text-hide {
-    font: 0/0 a;
     color: transparent;
     text-shadow: none;
     background-color: transparent;

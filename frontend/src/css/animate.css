@@ -23,7 +23,8 @@
     animation-duration: 14s!important;
     transform-origin: 70% 70%;
     animation-iteration-count: infinite;
-    animation-timing-function: linear
+    animation-timing-function: linear;
+    -webkit-animation-name: pulse;
 }
 
 @-webkit-keyframes bounce {
@@ -134,10 +135,7 @@
     }
 }
 
-.pulse {
-    -webkit-animation-name: pulse;
-    animation-name: pulse
-}
+
 
 @-webkit-keyframes rubberBand {
     0% {
