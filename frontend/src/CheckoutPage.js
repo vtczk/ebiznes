@@ -2,11 +2,11 @@ import React from 'react';
 import './HomePage.css';
 
 import Header from "./components/header-comp"
-import Footer from "./components/footer-comp"
+import Footer from "./components/footer"
 import Checkout from "./components/checkout"
 
 
-function WishlistPage() {
+function CheckoutPage() {
   return (
     <div className="App">
         <Header/>
@@ -16,4 +16,4 @@ function WishlistPage() {
   );
 }
 
-export default WishlistPage;
+export default CheckoutPage;

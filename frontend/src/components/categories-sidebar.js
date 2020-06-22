@@ -1,5 +1,5 @@
 import * as React from "react";
-import fetchCategories from "./categories-handler";
+import fetchCategories from "./fetch-categories";
 
 class CategoriesSidebar extends React.Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class CategoriesSidebar extends React.Component {
 
 
         );
-    };
+    }
 
 }
 

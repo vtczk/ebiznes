@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+﻿import React, {Component} from 'react';
 import './HomePage.css';
 
 import Header from "./components/header-comp"
-import Footer from "./components/footer-comp"
+import Footer from "./components/footer"
 import TopDeal from "./components/top-deal"
 
-class HomePage extends Component {
+class HomPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,9 +35,9 @@ class HomePage extends Component {
                         method: 'GET'
                     })
                     .then(response => response.json())
-                    .then(response => {
-                        response["discount"] = deal["discount"];
-                        this.setState({products: [...this.state.products, response]})
+                    .then(res => {
+                        res["discount"] = deal["discount"];
+                        this.setState({products: [...this.state.products, res]})
                     });
             }));
 
@@ -52,8 +52,8 @@ class HomePage extends Component {
                 <Footer/>
             </div>
 
-        );
+        )
     }
 }
 
-export default HomePage;
+export default HomPage;

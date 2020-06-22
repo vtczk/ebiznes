@@ -2,7 +2,7 @@ import React from 'react';
 import './HomePage.css';
 
 import Header from "./components/header-comp"
-import Footer from "./components/footer-comp"
+import Footer from "./components/footer"
 import Categories from "./components/search-comp"
 import {useParams} from "react-router-dom";
 

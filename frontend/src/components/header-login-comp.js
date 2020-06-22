@@ -10,7 +10,7 @@ import '../css/style.css';
 import '../css/themify-icons.css';
 import '../css/reset.css';
 
-export default class Header extends Component {
+export default class HeaderLoginComp extends Component {
     render() {
         return (
             <header className="header shop">

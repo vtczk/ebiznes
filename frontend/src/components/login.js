@@ -21,8 +21,8 @@ class Login extends Component {
     constructor(props,) {
         super(props);
         this.state = {
-            email: "test@gmail.com",
-            password: "admin123",
+            email: "",
+            password: "",
         };
         this.authenticate = this.authenticate.bind(this);
         this.socialAuthenticate = this.socialAuthenticate.bind(this)
