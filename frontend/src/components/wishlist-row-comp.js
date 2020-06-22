@@ -16,7 +16,7 @@ import {removeFromWishlist} from "./wishlist-handler"
 
 
 
-export default class WishlistRow extends Component {
+export default class WishlistRowComp extends Component {
     static contextType = GlobalContext;
     constructor(props) {
         super(props);
@@ -53,7 +53,7 @@ export default class WishlistRow extends Component {
                 <td className="action" data-title="Remove"><a href="/wishlist" onClick={()=>this.remove()}><i className="ti-trash remove-icon"></i></a></td>
             </tr>
 
-        );
+        )
     }
 }
 

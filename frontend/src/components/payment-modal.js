@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import '../css/style.css';
 
 
 
-class Modal extends React.Component {
+class PaymentModal extends React.Component {
 
     constructor(props) {
         super(props);
@@ -40,7 +40,7 @@ class Modal extends React.Component {
             </div>
 
         );
-    };
+    }
 }
 
-export default Modal;
+export default PaymentModal;

@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
 import '../css/animate.css';
@@ -15,7 +14,7 @@ import ProductListElement from "./product-comp"
 import RecentPost from "./recent-post-comp";
 
 
-class Search extends Component {
+class SearchComp extends Component {
     
     constructor(props) {
         super(props);
@@ -67,7 +66,7 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default SearchComp;
 
 
 

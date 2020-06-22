@@ -12,7 +12,7 @@ import '../css/themify-icons.css';
 import '../css/reset.css';
 
 
-export default class Description extends Component {
+export default class ProductDesc extends Component {
     constructor(props) {
         super(props)
     }

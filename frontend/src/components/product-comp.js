@@ -14,7 +14,7 @@ import {addToWishlist} from "./wishlist-handler";
 import {GlobalContext} from "./global-context";
 
 
-export default class ProductListElement extends Component {
+export default class ProductComp extends Component {
     static contextType = GlobalContext;
 
     constructor(props) {

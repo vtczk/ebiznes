@@ -15,7 +15,7 @@ import Row from "./wishlist-row-comp";
 import {GlobalContext} from "./global-context";
 import CategoriesSidebar from "./categories-sidebar";
 
-class Wishlist extends Component {
+class WishlistComp extends Component {
 
     static contextType = GlobalContext;
     constructor(props) {
@@ -92,6 +92,6 @@ class Wishlist extends Component {
     }
 }
 
-export default Wishlist;
+export default WishlistComp;
 
 

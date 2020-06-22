@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
 import '../css/animate.css';
@@ -14,7 +13,7 @@ import '../css/reset.css';
 import ProductListElement from "./product-comp"
 import RecentPost from "./recent-post-comp";
 
-class Categories extends Component {
+class MainBodyComp extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +32,7 @@ class Categories extends Component {
             .then(data => this.setState({
                 products: data
             }));
-    };
+    }
     render() {
         return (
             <div>
@@ -63,7 +62,7 @@ class Categories extends Component {
     }
 }
 
-export default Categories;
+export default MainBodyComp;
 
 
 

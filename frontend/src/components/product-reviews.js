@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
 import '../css/animate.css';
@@ -13,7 +12,7 @@ import '../css/themify-icons.css';
 import '../css/reset.css';
 
 
-export default class Reviews extends Component {
+export default class ProductReviews extends Component {
     constructor(props) {
         super(props);
         this.state={
