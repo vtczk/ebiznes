@@ -43,4 +43,7 @@ SHELL ["/bin/bash", "-c"]
 ENV NODE_PATH ~/.nvm/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      ~/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
-COPY . /backend
+WORKDIR /opt
+
+COPY ./backend /opt/backend
+COPY ./frontend /opt/frontend
