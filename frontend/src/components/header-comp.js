@@ -9,7 +9,7 @@ import '../css/style.css';
 import '../css/themify-icons.css';
 import '../css/reset.css';
 import {GlobalContext} from "./global-context";
-import fetchCategories from "./categories-handler";
+import fetchCategories from "./fetch-categories";
 import {withRouter} from "react-router-dom";
 
 class Header extends Component {
@@ -83,7 +83,7 @@ class Header extends Component {
         // fetch("http://localhost:9000/search/" + this.state.searchText)
         //     .then(response => response.json()).then(response => this.props.history.push("/product/" + response.id));
 
-    };
+    }
 
     render() {
         return (

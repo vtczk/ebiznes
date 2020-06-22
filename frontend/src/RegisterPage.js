@@ -2,12 +2,12 @@ import React from 'react';
 import './HomePage.css';
 
 import Header from "./components/header-comp"
-import Footer from "./components/footer-comp"
+import Footer from "./components/footer"
 
 import CreateAccount from "./components/create-account"
 
 
-function Register() {
+function RegisterPage() {
   return (
     <div className="App">
         <Header/>
@@ -17,4 +17,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegisterPage;

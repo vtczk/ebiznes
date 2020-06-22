@@ -3,7 +3,7 @@ import './HomePage.css';
 
 import Header from "./components/header-comp"
 
-import Footer from "./components/footer-comp"
+import Footer from "./components/footer"
 
 import ProductDetails from "./components/product-details"
 import {useParams} from "react-router-dom";
