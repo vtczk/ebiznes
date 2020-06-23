@@ -1898,7 +1898,7 @@ Version:1.0
 	transition: all 250ms ease-out;
 }
 .single-product .product-img .product-action-2 a {
-	display: block;
+
 	background-color: transparent;
 	color: #333;
 	text-align: left;
@@ -1914,7 +1914,7 @@ Version:1.0
 .single-product .button-head {
 	background: #fff;
 	display: inline-block;
-	height: 40px;
+
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -2163,7 +2163,6 @@ Version:1.0
 	color: #222;
 	font-weight: 500;
 	font-size: 14px;
-	font-weight: 500;
 	display: block;
 }
 .shop-sidebar .single-post .content h5 a:hover{
@@ -2208,7 +2207,7 @@ Version:1.0
 	margin: 4px 5px 0 0;
 	font-weight:500;
 }
-.shop .single-shorter option{}
+
 .shop .nice-select {
 	clear: initial;
 	display: inline-block;
@@ -2217,7 +2216,7 @@ Version:1.0
 	border-radius: 0px;
 	height: auto;
 	width: auto;
-	border-radius: 0px;
+
 }
 .shop .nice-select::after{
 	border-color:#888;
@@ -2294,7 +2293,6 @@ Version:1.0
 	margin: 0 8px 10px -3px;
 }
 .shop.single .flex-control-thumbs li img {
-	border: none;
 	padding: 0;
 	border:1px solid transparent;
 }
@@ -2467,7 +2465,6 @@ Version:1.0
 	display: inline-block;
 }
 .shop.single .quantity .button {
-	display: inline-block;
 	position: absolute;
 	top: 0;
 	display:inline-block;
@@ -2565,7 +2562,6 @@ Version:1.0
 	margin-right:0;
 }
 .shop.single .nav-tabs li a {
-	border: 0px solid;
 	border-radius: 0px;
 	background: #fff;
 	color: #333;
@@ -2658,7 +2654,6 @@ Version:1.0
 .shop.single .rating-des {
 	padding-left: 72px;
 	background: #f9f8f8;
-	padding: 17px 20px 17px 107px;
 }
 .shop.single .rating-des .ratings {
 	margin: 0;
@@ -2791,7 +2786,6 @@ Version:1.0
 }
 .shop-home-list .shop-section-title h1 {
 	font-size: 22px;
-	margin-bottom: 0;
 	text-transform: capitalize;
 	position: relative;
 	color: #2c2d3f;
@@ -2894,7 +2888,6 @@ Version:1.0
 	padding: 2px 18px;
 	border-radius: 30px;
 	font-size: 14px;
-	font-weight: 500;
 }
 /*======================================
    End Shop Home List CSS
@@ -2938,7 +2931,6 @@ Version:1.0
 .shopping-summery tbody .product-name a {
 	font-weight: 600;
 	color: #282828;
-	font-weight: 600;
 	font-size: 17px;
 }
 .shopping-cart .table p {
@@ -3048,7 +3040,6 @@ Version:1.0
 	height: 48px;
 	border: navajowhite;
 	margin-left: 4px;
-	background: transparent;
 	color: #333;
 	background: #fff;
 	box-shadow: 0px 0px 5px #00000012;
@@ -3093,14 +3084,11 @@ Version:1.0
 .shopping-cart .total-amount .left .checkbox label::after {
 	position: absolute;
 	content: "\f00c";
-	font-family: "Fontawesome";
-	left: 0;
 	top: 0;
 	width: 22px;
 	height: 22px;
 	line-height: 24px;
 	left: 3px;
-	top: 0px;
 	opacity: 0;
 	visibility: hidden;
 	transform: scale(0);
@@ -3528,7 +3516,6 @@ Version:1.0
 .shop.login .login-form .checkbox label::after {
 	position: absolute;
 	content: "\f00c";
-	font-family: "Fontawesome";
 	width: 12px;
 	height: 12px;
 	line-height: 23px;
@@ -3609,8 +3596,6 @@ Version:1.0
 	border: 1px solid #cecece;
 	font-size: 13px;
 	border-radius: 30px;
-	height: auto;
-	line-height: a;
 	padding: 13px 32px;
 }
 .shop-list .list-content .btn:hover{
@@ -3830,10 +3815,9 @@ Version:1.0
 	display: inline-block;
 	text-shadow: none;
 	box-shadow: none;
-	border-radius: 0;
 	border: none;
 	border: 1px solid #ececec;
-	border-radius: 30px 0 0 30px;
+
 }
 .shop-newsletter .newsletter-inner button{
 	border:none;
@@ -4125,7 +4109,6 @@ Version:1.0
 	background: #fff;
 	margin-top: 30px;
 	padding: 40px;
-	background: transparent;
 	border: 1px solid #eeeeeec2;
 }
 .main-sidebar .single-widget{
@@ -4162,7 +4145,6 @@ Version:1.0
 	box-shadow: none;
 	text-shadow: none;
 	font-size: 14px;
-	border: none;
 	color: #222;
 	background: transparent;
 	padding: 0 70px 0 20px;
@@ -4263,11 +4245,10 @@ Version:1.0
 	color: #2C2D3F;
 	font-weight: 500;
 	font-size: 14px;
-	font-weight: 500;
 	margin-top: 10px;
 	display: block;
 	margin-bottom: 10px;
-	margin-top: 0;
+
 }
 .main-sidebar .single-post .content h5 a:hover{
 	color:#F7941D;
@@ -4304,7 +4285,7 @@ Version:1.0
 	text-transform: capitalize;
 	border-radius: 0;
 	font-size: 13px;
-	background: #F6F7FB;
+
 }
 .main-sidebar .side-tags .tag a:hover{
 	color:#fff;
@@ -4389,7 +4370,6 @@ Version:1.0
 	margin: 40px 0 15px 0;
 }
 .blog-single .blog-meta {
-	margin-bottom: 0;
 	overflow: hidden;
 	border-bottom: 1px solid #dddddd6e;
 	padding-bottom: 20px;
@@ -4436,9 +4416,7 @@ Version:1.0
 	font-size: 13px;
 	font-weight: 400;
 	padding-left: 20px;
-	padding: 10px 20px;
 	background: #F6F6F6;
-	padding: 30px 40px 30px 70px;
 	color: #555;
 	border: none;
 	margin-bottom: 25px;
@@ -4537,7 +4515,6 @@ Version:1.0
 	color: #333;
 	font-size: 16px;
 	font-weight: 500;
-	margin-bottom: 10px;
 	display: inline-block;
 	margin-bottom: 18px;
 	text-transform: capitalize;
@@ -4549,7 +4526,6 @@ Version:1.0
 	margin: 0;
 	font-weight: 400;
 	text-transform: capitalize;
-	display: block;
 	margin-top: 5px;
 }
 .blog-single .single-comment .content p {
@@ -4563,7 +4539,6 @@ Version:1.0
 .blog-single .single-comment .content .button{}
 .blog-single .single-comment .content .btn {
 	display: inline-block;
-	color: #666;
 	font-weight: 400;
 	color: #6a6a6a;
 	border-radius: 4px;
@@ -4688,7 +4663,6 @@ Version:1.0
 	margin-bottom: 15px;
 	height: 40px;
 	width: 40px;
-	display: block;
 	text-align: center;
 	border-radius: 3px;
 	line-height: 40px;
@@ -4803,7 +4777,6 @@ Version:1.0
 	position:relative;
 }
 .error-page .error-inner {
-	text-align: center;
 	flex-direction: initial;
 	height: auto;
 	text-align: center;
@@ -4812,7 +4785,6 @@ Version:1.0
 	color: #F7941D;
 	margin-bottom: 0;
 	font-weight: 700;
-	font-size: 100px;
 	display: inline-block;
 	font-size: 120px;
 }
@@ -4839,12 +4811,9 @@ Version:1.0
 	border-radius: 30px;
 	background: #333;
 	color: #fff;
-	font-weight: 600;
 	font-size: 14px;
 	font-weight: 500;
 	border: 1px solid #d7d7d7;
-	background: transparent;
-	color: #333;
 	padding: 10px 28px;
 }
 .error-page .button .btn:hover{
@@ -5142,7 +5111,6 @@ my{
   input.cart-plus-minus-box {
 	background: transparent none repeat scroll 0 0;
 	box-shadow: none;
-	font-family: roboto;
 	height: 100%;
 	margin-bottom: 0;
 	padding: 0;

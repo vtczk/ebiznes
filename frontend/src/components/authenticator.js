@@ -3,7 +3,7 @@ import {GlobalContext} from "./global-context";
 import Redirect from "react-router-dom/es/Redirect";
 import {useParams} from "react-router-dom";
 
-export default function SocialAuthenticator() {
+export default function Authenticator() {
     let {token} = useParams();
     const context = useContext(GlobalContext);
 
