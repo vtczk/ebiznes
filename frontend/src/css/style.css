@@ -4984,14 +4984,6 @@ Version:1.0
 	left:-40px;
 }
 
-my{
-	position:relative;
-	left:10px;
-	-ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%
-}
-
 .wishlist-container{
 	max-width:1370px;
 }
