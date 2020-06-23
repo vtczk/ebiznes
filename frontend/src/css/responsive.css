@@ -298,7 +298,6 @@ Version:1.0
 	margin-left: 0px;
 	width: 220px;
 	margin-top: 10px;
-	display:block;
 }
 .contact-us .form-main {
 	padding: 30px;
@@ -424,7 +423,6 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav .slicknav_row, .slicknav_nav a {
-	padding: 0;
 	margin: 0;
 	padding: 6px 0;
 	font-weight: 500;
@@ -601,7 +599,6 @@ Version:1.0
 	margin-top: 20px;
 }
 .hero-area4 .big-content .inner {
-	padding: 0;
 	padding-right: 30px;
 	background: #ffffffba;
 	padding: 25px;
@@ -860,7 +857,6 @@ Version:1.0
 	display: block;
 	height: auto;
 	text-align: left !important;
-	padding-left: calc(50% + 20px) !important;
 	width: 100%;
 	position: relative;
 	padding-left: 91px;
@@ -911,7 +907,7 @@ Version:1.0
 	margin-left: 0px;
 	width: 220px;
 	margin-top: 10px;
-	display:block;
+
 }
 .shop.login {
 	padding:50px 0;
@@ -1137,9 +1133,9 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav .slicknav_row, .slicknav_nav a {
-	padding: 0;
+
 	margin: 0;
-	padding: 6px 0;
+	padding: 6px;
 	font-weight: 500;
 }
 .slicknav_nav li:last-child a{
@@ -1216,7 +1212,6 @@ Version:1.0
 }
 .header.shop .list-main li {
 	border: none;
-	padding: 0;
 	display: block;
 	padding: 5px 0;
 	border-bottom: 1px solid #eee;
@@ -1466,14 +1461,8 @@ Version:1.0
 .shop .view-mode li {
 	display: inline-block;
 	margin-right: 5px;
-	display: inline-block;
-	margin: 0;
-	mar0-t: mar;
 	margin-top: 4px;
 	width: 100%;
-	display: block;
-	display: inline-block;
-	display: ;
 }
 .shop .view-mode li a {
 	width: 80px;
@@ -1485,7 +1474,6 @@ Version:1.0
 	line-height: 32px;
 	color: #888;
 	border-radius: 0px;
-	display: inline-block;
 	margin-bottom: 10px;
 }
 .shop.single .rating-author {
